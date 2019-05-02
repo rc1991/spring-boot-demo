@@ -9,8 +9,10 @@ import org.springframework.ui.Model;
 public class HelloController {
 
     @GetMapping("/hello")
-    public String index(Model model, @RequestParam(value="name", required=false, defaultValue="visitor") String name) {
-        model.addAttribute("name", name);
-        return "hello/hello";
+    public String index(@RequestParam(value="name", required=false, defaultValue="visitor") String name,
+                        Model model) {
+        HelloBO bo = new HelloBO(name);
+        model.addAttribute("bo", bo);
+        return "hello/index";
     }
 }

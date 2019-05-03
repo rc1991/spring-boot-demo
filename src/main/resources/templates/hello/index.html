@@ -2,8 +2,27 @@
     <head>
         <title>Spring Boot Demo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     </head>
     <body>
-        <span th:text="${bo.content}">Hello World</span>
+        <div th:text="${bo.greeting}">Hello World</div>
+        <div>
+            <span>All Data</span>
+            <div th:each="demo:${bo.content}">
+                <li  th:text="${demo.id}+': '+${demo}">Data</li>
+                <input type="text" name="name" th:id="'input-update-'+${demo.id}">
+                <button th:attr="onclick=|update('${demo.id}')|">Update</button>
+                <button th:attr="onclick=|remove('${demo.id}')|" >Delete</button>
+            </div>
+
+
+        </div>
+        <div id="insert-form">
+            <div>Create new data:</div>
+            <input type="text" name="name" id="input-create">
+            <button onclick="create()">Create</button>
+        </div>
+
+        <script src="/index.js"></script>
     </body>
 </html>

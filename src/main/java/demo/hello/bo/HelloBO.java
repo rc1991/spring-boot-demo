@@ -1,5 +1,5 @@
-package hello.bo;
-import hello.po.DemoPO;
+package demo.hello.bo;
+import demo.hello.po.DemoPO;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -1,13 +1,11 @@
-package hello.controller;
+package demo.hello.controller;
 
-import hello.dao.DemoRepository;
-import hello.po.DemoPO;
+import demo.hello.repository.DemoRepository;
+import demo.hello.po.DemoPO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/hello")
